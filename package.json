@@ -1,0 +1,19 @@
+{
+  "name": "discord-character-ai-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that interacts with Character.AI and manages user messages.",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "dev": "nodemon src/bot.js"
+  },
+  "dependencies": {
+    "discord.js-selfbot-v13": "^3.7.0",
+    "node_characterai-arm-fix": "2.0.2",
+    "html-entities": "^2.6.0",
+    "dotenv": "^16.4.5"
+  },
+  "author": "s6xs",
+  "license": "MIT",
+  "type": "module"
+}

@@ -1,0 +1,13 @@
+{
+  "users": {
+    "exampleUser": "Example Display Name"
+  },
+  "config": {
+    "adminId": "",
+    "chatId": "",
+    "chatId2": "",
+    "characterAIUrl": "",
+    "discordToken": "",
+    "characterAIToken": ""
+  }
+}
