@@ -1,62 +1,100 @@
-# Discord Bot Export
+# Discord Character.AI Bot
 
-## Overview
-This project is a Discord bot that integrates with the Character.AI API. It is designed to handle messages in specified Discord channels and respond using AI-generated content. The bot can be controlled via admin commands and logs interactions for review.
+A Discord selfbot that integrates with [Character.AI](https://beta.character.ai/) to simulate conversations in specified channels.  
+The bot listens for mentions, replies with AI-generated responses, and supports admin commands for maintenance.
 
-## Project Structure
+---
+
+## 📂 Project Structure
 ```
-discord-bot-export
-├── src
-│   ├── bot.js          # Main logic for the Discord bot
-│   ├── export.js       # Functionality export module
-│   └── utils
-│       └── index.js    # Utility functions
-├── data.json           # User data and configurations
-├── package.json        # npm configuration file
-├── .env                # Environment variables
-└── README.md           # Project documentation
+.
+├── src/
+│   ├── bot.js        # Core bot logic
+│   └── index.js      # Entry point
+├── data.json         # Configuration and user mappings
+├── package.json      # Dependencies and scripts
+└── res.txt           # Log output (auto-generated)
 ```
 
-## Setup Instructions
+---
 
-1. **Clone the repository:**
-   ```
-   git clone <repository-url>
-   cd discord-bot-export
+## 🚀 Features
+- Connects a Discord selfbot using `discord.js-selfbot-v13`.
+- Authenticates with Character.AI via `node_characterai-arm-fix`.
+- Responds to mentions in **any number of configured channels**.
+- Maintains user display name mappings via `data.json`.
+- Admin commands for control:
+  - `?help` — Show available commands.
+  - `?refresh` — Refresh AI session.
+  - `?update-desc` — Update character description (placeholder).
+  - `?kill` — Shut down the bot.
+
+---
+
+## ⚙️ Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/discord-character-ai-bot.git
+   cd discord-character-ai-bot
    ```
 
-2. **Install dependencies:**
-   Ensure you have Node.js installed, then run:
-   ```
+2. Install dependencies:
+   ```bash
    npm install
    ```
 
-3. **Configure environment variables:**
-   Create a `.env` file in the root directory and add the following variables:
-   ```
-   DISC_TOKEN=<your_discord_token>
-   CAI_TOKEN=<your_character_ai_token>
-   DISC_CHAT_ID=<your_discord_chat_id>
-   DISC_CHAT_ID2=<your_second_discord_chat_id>
-   DISC_ADMIN_ID=<your_discord_admin_id>
-   CAI_URL=<your_character_ai_url>
+3. Set up configuration in `data.json`:
+   ```json
+   {
+     "users": {
+       "exampleuser": "Nickname"
+     },
+     "config": {
+       "adminId": "YOUR_DISCORD_ID",
+       "chatIds": [
+         "DISCORD_CHANNEL_ID_1",
+         "DISCORD_CHANNEL_ID_2",
+         "DISCORD_CHANNEL_ID_3"
+       ],
+       "characterAIUrl": "CHARACTER_URL_ID",
+       "discordToken": "YOUR_DISCORD_TOKEN",
+       "characterAIToken": "YOUR_CHARACTER_AI_TOKEN"
+     }
+   }
    ```
 
-4. **Run the bot:**
-   Use the following command to start the bot:
-   ```
-   node src/bot.js
-   ```
+⚠️ **Important:**  
+- Never commit your real tokens to GitHub!  
+- Replace sensitive fields with environment variables or `.env` file for safety.
 
-## Usage Guidelines
-- The bot listens for messages in specified channels and responds using AI-generated content.
-- Admin commands can be issued by the user specified in the `DISC_ADMIN_ID` environment variable.
-- The bot logs all interactions in a file for review.
+---
 
-## Features
-- Integration with Discord and Character.AI.
-- Admin command functionality for bot management.
-- Message logging for tracking interactions.
+## ▶️ Usage
 
-## Contributing
-Feel free to submit issues or pull requests to improve the bot's functionality or documentation.
+### Development
+```bash
+npm run dev
+```
+
+### Production
+```bash
+npm start
+```
+
+---
+
+## 📝 Logs
+Bot messages and responses are streamed to `res.txt` for efficiency.
+
+---
+
+## 📜 License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Credits
+- [discord.js-selfbot-v13](https://www.npmjs.com/package/discord.js-selfbot-v13)  
+- [node_characterai-arm-fix](https://www.npmjs.com/package/node_characterai-arm-fix)  
+- Author: **s6xs**

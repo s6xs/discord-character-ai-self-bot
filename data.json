@@ -1,13 +1,16 @@
-{
-  "users": {
-    "exampleUser": "Example Display Name"
-  },
-  "config": {
-    "adminId": "",
-    "chatId": "",
-    "chatId2": "",
-    "characterAIUrl": "",
-    "discordToken": "",
-    "characterAIToken": ""
-  }
-}
+   {
+     "users": {
+       "exampleuser": "Nickname"
+     },
+     "config": {
+       "adminId": "YOUR_DISCORD_ID",
+       "chatIds": [
+         "DISCORD_CHANNEL_ID_1",
+         "DISCORD_CHANNEL_ID_2",
+         "DISCORD_CHANNEL_ID_3"
+       ],
+       "characterAIUrl": "CHARACTER_URL_ID",
+       "discordToken": "YOUR_DISCORD_TOKEN",
+       "characterAIToken": "YOUR_CHARACTER_AI_TOKEN"
+     }
+   }
